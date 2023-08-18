@@ -35,11 +35,17 @@ public class ExceptionsDemo {
      * 
      * Despite this, you can still make a try/catch and attempt to catch them.
      */
-
+    
+    
     public static void main(String[] args) {
 
         // 1. Create a try/catch block (Hint: type "try" and ctrl + space).
-
+    	try {
+			testFiveOrGreater(4);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
         /*
          * 2. Call the testFiveOrGreater method with a value less than 5 inside
          * the try block.

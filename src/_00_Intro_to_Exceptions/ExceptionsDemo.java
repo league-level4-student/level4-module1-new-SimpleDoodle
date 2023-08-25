@@ -1,12 +1,14 @@
 package _00_Intro_to_Exceptions;
 
+import javax.swing.JOptionPane;
+
 public class ExceptionsDemo {
 
     /*
      * Exceptions make it easier to debug or handle unexpected run time errors
      * when they arise in your programs.
      */
-
+	
     /*
      * The throws keyword in testFiveOrGreater lets the compiler know this
      * method could throw a method and needs a try catch block to handle it.
@@ -38,19 +40,23 @@ public class ExceptionsDemo {
     
     
     public static void main(String[] args) {
-
         // 1. Create a try/catch block (Hint: type "try" and ctrl + space).
     	try {
+    		testPositive(-1);
 			testFiveOrGreater(4);
-		} catch (Exception e) {
+		} catch (NegativeNumberException x) {
+ 			x.printStackTrace();
+ 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
+		} finally {
+			JOptionPane.showMessageDialog(null, "Your computer is ok");
 		}
         /*
          * 2. Call the testFiveOrGreater method with a value less than 5 inside
          * the try block.
          */
-
+    	
         /*
          * 3. Call e.printStackTrace() in the catch block. This prints out the
          * last methods called during your program's execution to the console in
@@ -93,7 +99,11 @@ public class ExceptionsDemo {
      * 
      * 10. Try running the program. Did it show a pop-up?
      */
-
+	static void testPositive(int negative) throws NegativeNumberException {
+		if (negative < 0) {
+			throw new NegativeNumberException();
+		}
+	}
     /*
      * 11. Add a finally block after your catch block(Hint: finally{}). A
      * finally block always occurs after a try/catch block even if no exception

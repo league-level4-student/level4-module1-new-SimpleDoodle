@@ -22,12 +22,12 @@ class GottaCatchemAll {
      * 
      * Warning: Do not modify any other code or directly throw the exception!
      */
-
+	
     /**
      * A NullPointerException occurs when code tries to use a reference type
      * variable that is uninitialized or otherwise has a value of null.
      */
-
+	
     private Robot rob;
 
     @Test
@@ -50,7 +50,7 @@ class GottaCatchemAll {
             assertTrue(nullPointerExceptionCaught);
         }
     }
-
+    
     /**
      * An ArrayIndexOutOfBoundsException occurs when code tries to access an
      * index within an array or other indexed data structure that does not

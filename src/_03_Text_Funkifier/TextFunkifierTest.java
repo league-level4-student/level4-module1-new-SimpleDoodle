@@ -41,9 +41,10 @@ public class TextFunkifierTest {
      * 5. Create a matching JUnit test below to test for your custom String and
      * make it pass.
      */
-
+    
     @Test
     public void testCustomString() {
-
+    	CustomString cs = new CustomString("This may not be a test   ");
+    	assertEquals("This may not be a test", cs.funkifyText());
     }
 }

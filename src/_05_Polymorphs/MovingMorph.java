@@ -1,11 +1,10 @@
 package _05_Polymorphs;
 
-import java.awt.Color;
 import java.awt.Graphics;
 
-public class RedPolymorph extends Polymorph {
+public class MovingMorph extends Polymorph{
 
-	public RedPolymorph(int x, int y) {
+	public MovingMorph(int x, int y) {
 		super(x, y);
 		// TODO Auto-generated constructor stub
 	}
@@ -13,14 +12,26 @@ public class RedPolymorph extends Polymorph {
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		
+	x++;
+	y--;
+	if (x<0) {
+		x++;
+	}
+	else if (x>900) {
+		x--;
+	}
+	else if (y>600) {
+		y--;
+	}
+	else if (y<0) {
+		y++;
+	}
 	}
 
 	@Override
 	public void draw(Graphics g) {
 		// TODO Auto-generated method stub
-		g.setColor(Color.RED);
-		g.fillRect(x, y, width, height);
+		g.fillOval(x, y, width, height);
 	}
 
 }
